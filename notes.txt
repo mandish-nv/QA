@@ -1,0 +1,18 @@
+Download playwright:
+npm init playwright@latest
+
+run test:
+npx playwright test
+npx playwright test tests/example.spec.js
+npx playwright test tests/example.spec.js --headed -> visualize tests
+npx playwright test tests/example.spec.js --project 'Chromium' -> specific browser
+npx playwright test tests/example.spec.js -g -> specific test
+
+modify settings -> playwright.config.js
+objects file -> .po files
+fixtures file -> test data
+common files -> utils/helper.spec.js
+
+xpath info: https://www.guru99.com/xpath-selenium.html
+
+Design pattern: Page Object model
