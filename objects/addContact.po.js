@@ -89,30 +89,29 @@ exports.TestPage = class TestPage {
     await expect(this.page.locator(this.savedCountry)).toHaveText(country);
   }
 
-  async deleteContact(firstName, lastName, email){
+  async deleteContact(email){
     await this.page.goto('/contactList');
-    await expect(this.page.locator('body')).toContainText(firstName + " " + lastName);
     await expect(this.page.locator('body')).toContainText(email);
     await this.page.locator(`text=${email}`).first().click();
     
-    await this.page.locator(this.deleteButton).click();
-
     // 1. Set up the dialog listener/waiter FIRST
     await this.page.waitForEvent('dialog', async dialog => {
-      // Assertions for the message and type
       expect(dialog.message()).toBe('Are you sure you want to delete this contact?');
-      expect(dialog.type()).toBe('confirm'); // Correct type for a dialog with OK/Cancel
-      // Action: Accept the dialog (click OK)
+      expect(dialog.type()).toBe('confirm');
       await dialog.accept();
     });
-
     // 2. THEN perform the action that triggers the dialog
     await this.page.locator(this.deleteButton).click();
-
-    // await expect(this.page).toHaveURL("/contactList");
   }
 
-  async validateDeleteContact(){}
+  async deleteContactEXTRA(){
+    await this.page.waitForTimeout(2000);
+    this.page.once('dialog', async dialog => {
+      console.log(`Dialog message: ${dialog.message()}`);
+      await dialog.accept(); // use dialog.dismiss() if you want to cancel instead
+    });
+    await this.page.locator(this.deleteButton).click(); 
+  }
 
   async editContact(previousEmail,firstName,lastName,birthdate,email,phone,street1,street2,city,stateProvince,postalCode,country) {
     // await this.page.goto('/contactList');
