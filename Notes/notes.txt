@@ -16,3 +16,28 @@ common files -> utils/helper.spec.js
 xpath info: https://www.guru99.com/xpath-selenium.html
 
 Design pattern: Page Object model
+
+
+GIT:
+git clone https://github.com/mandish-nv/NewRepo
+git status
+git add <file>      git add .
+git commit -m "message"
+git push origin main
+git pull origin main
+git branch
+
+# branching
+git checkout -b 'TestBranch'
+git add .
+git commit -m "message"
+git push origin TestBranch
+
+git checkout<branch_name> //switch
+git merge main -m 'Merging main' //inside new 
+
+
+REPORT:
+test plan
+objectives
+scope of testing
