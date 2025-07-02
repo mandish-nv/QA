@@ -1,0 +1,34 @@
+{
+  "validUser": {
+    "email": "mandishvaidya12345@gmail.com",
+    "password": "mandish" 
+  },
+  "invalidUser": {
+    "email": "hsdkjhsadj",
+    "password": "dsadsauttu" 
+  },
+  "data":{
+    "firstName": "testJohn",
+    "lastName": "testJohnDoe",
+    "birthdate": "1990-01-20",
+    "email": "testJohnjohndoe@gmail.com",
+    "phone": "98123345678",
+    "street1": "Address1",
+    "city": "City1",
+    "stateProvince": "State1",
+    "postalCode": "12345",
+    "country": "Nepal"
+  },
+  "editedData":{
+    "firstName": "testJohn",
+    "lastName": "testJohnDoe",
+    "birthdate": "1990-01-20",
+    "email": "testJohnjohndoe@gmail.com",
+    "phone": "98123345678",
+    "street1": "Address1",
+    "city": "City1",
+    "stateProvince": "State1",
+    "postalCode": "12345",
+    "country": "Nepal"
+  }
+}
