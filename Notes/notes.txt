@@ -1,5 +1,6 @@
 Download playwright:
 npm init playwright@latest
+npm i -> view packages
 
 run test:
 npx playwright test
